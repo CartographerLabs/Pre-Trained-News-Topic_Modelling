@@ -21,4 +21,5 @@ print(modeller.get_topics())
 
 ## Dataset
 This dataset has been gathered from the global most used news websites (written in English), where they're most recent pages have been identified as news (using:  [Website-Category-Identification-Tool](https://github.com/user1342/Website-Category-Identification-Tool)) then these articles have been added to the dataset.
-- [Kaggle Dataset and Kernel](www.kaggle.com/dataset/061b55bb510ebb7c484ef2c9ed5f5ddc474239d5952d9a75e7cc587923bec7df)
+
+- Kaggle Dataset and Kernel: www.kaggle.com/dataset/061b55bb510ebb7c484ef2c9ed5f5ddc474239d5952d9a75e7cc587923bec7df
