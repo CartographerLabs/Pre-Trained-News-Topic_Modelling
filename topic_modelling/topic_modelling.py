@@ -125,8 +125,11 @@ class topic_modelling:
             new_doc_bow)  # Here we use the LDA object we've trained and provide the new document to get it's topics - These probabilities add up to 1
 
         # Update for fixing 'flaot32' error. Where the result of this function were not JSON serializable.
-        for topic_key in topics:
-            topics[topic_key] = format(topics[topic_key], '.12g')
+        for topic_set in topics:
+            topics.remove(topic_set)
+            topic = topic_set[0]
+            topic_score = format(round(float(topic_set[1]), 6))
+            topics.append((topic,topic_score))
 
         return topics
 
