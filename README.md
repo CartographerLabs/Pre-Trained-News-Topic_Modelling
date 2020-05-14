@@ -1,4 +1,4 @@
-# Pre-trained LDA Topic Modelling For Online Data 🌐
+# Pre-trained LDA Topic Modelling For Online Data
 
 A pre-trained model and Python library for LDA topic modelling. This can be re-trained, however, has been trained by default for online data (Specifically news articles). 
 
