@@ -8,6 +8,7 @@ from spacy.lang.en import English
 from pathlib import Path
 import logging
 from gensim import corpora
+import numpy as np
 
 
 class topic_modelling:
@@ -124,13 +125,13 @@ class topic_modelling:
         topics = ldamodel.get_document_topics(
             new_doc_bow)  # Here we use the LDA object we've trained and provide the new document to get it's topics - These probabilities add up to 1
 
+        filtered_topics = []
         for topic_set in topics:
-            topics.remove(topic_set)
             topic = topic_set[0]
-            topic_score = float(topic_set[1])
-            topics.append((topic,topic_score))
+            topic_score = float(round(float(topic_set[1]), 6))
+            filtered_topics.append((topic,topic_score))
 
-        return topics
+        return filtered_topics
 
     def get_topics(self, number_of_words=4):
 
