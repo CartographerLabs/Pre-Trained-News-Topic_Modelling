@@ -27,9 +27,6 @@ class topic_modelling:
         The constructor
         '''
 
-        nltk.download('wordnet')
-        nltk.download('stopwords')
-
         if not os.path.isdir(self.models_dir):
             os.mkdir(self.models_dir)
 
