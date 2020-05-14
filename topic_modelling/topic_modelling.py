@@ -125,11 +125,11 @@ class topic_modelling:
         topics = ldamodel.get_document_topics(
             new_doc_bow)  # Here we use the LDA object we've trained and provide the new document to get it's topics - These probabilities add up to 1
 
-        filtered_topics = []
+        filtered_topics = {}
         for topic_set in topics:
             topic = topic_set[0]
             topic_score = float(round(float(topic_set[1]), 6))
-            filtered_topics.append((topic,topic_score))
+            filtered_topics[topic] = topic_score
 
         return filtered_topics
 
