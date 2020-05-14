@@ -11,8 +11,8 @@ setuptools.setup(
     description="A pre-trained model for topic modelling online data (Primarily online news articles).",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/user1342/Website-Category-Identification-Tool",
-    packages=setuptools.find_packages(),
+    url="https://github.com/user1342/Topic-Modelling-For-Online-Data",
+    packages=["topic_modelling"],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: GPL-3.0",
