@@ -14,7 +14,7 @@ setuptools.setup(
     url="https://github.com/user1342/Topic-Modelling-For-Online-Data",
     packages=["topic_modelling"],
     include_package_data=True,
-    package_data=["topic_modelling/data","topic_modelling/models"],
+    package_data={"":["topic_modelling/data","topic_modelling/models"]},
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: GPL-3.0",
