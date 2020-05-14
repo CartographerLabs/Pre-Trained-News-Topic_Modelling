@@ -124,6 +124,10 @@ class topic_modelling:
         topics = ldamodel.get_document_topics(
             new_doc_bow)  # Here we use the LDA object we've trained and provide the new document to get it's topics - These probabilities add up to 1
 
+        # Update for fixing 'flaot32' error. Where the result of this function were not JSON serializable.
+        for topic_key in topics:
+            topics[topic_key] = format(topics[topic_key], '.12g')
+
         return topics
 
     def get_topics(self, number_of_words=4):
