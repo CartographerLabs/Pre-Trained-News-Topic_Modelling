@@ -8,7 +8,7 @@ Install the library with  ```pip``` and the GitHub link.
 python -m pip install git+https://github.com/user1342/Topic-Modelling-For-Online-Data.git
 ```
 
-## Using
+## Usage
 
 ```python 
 from topic_modelling.topic_modelling import topic_modelling
