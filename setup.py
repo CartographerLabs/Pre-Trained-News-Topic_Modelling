@@ -13,6 +13,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/user1342/Topic-Modelling-For-Online-Data",
     packages=["topic_modelling"],
+    include_package_data=True,
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: GPL-3.0",
