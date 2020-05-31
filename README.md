@@ -22,7 +22,7 @@ print(modeller.get_topics())
 ```
 
 ### Retraining The Model
-The number of topics, passes, and dataset (seperated by ```\n``` with one line per article) can be defined. Topics defaults to 4, passes to 15, and the dataset defaults to a list of 23876 news articles located in the ```data``` directory of the library called ```dataset.txt```. Once retrained the new model files will be created in the libraries ```models``` folder and will be used for later use.
+The number of topics, passes, and dataset (seperated by ```\n``` with one line per article) can be defined. Topics defaults to 4, passes to 15, and the dataset defaults to a list of 22545 news articles located in the ```data``` directory of the library called ```dataset.txt```. Once retrained the new model files will be created in the libraries ```models``` folder and will be used for later use.
 
 ```python
 modeller = topic_modelling()
