@@ -70,7 +70,7 @@ class topic_modelling:
                   tokens]  # Performs stemming and Stemming and lemmatization on all words in list
         return tokens
 
-    def re_train(self, number_of_topics=4, number_of_passes=15, dataset=os.path.join(data_dir, 'dataset.txt'),
+    def re_train(self, number_of_topics=4, number_of_passes=15, dataset=os.path.join(data_dir, 'dataset.txt.arch2'),
                  dataset_encoding="utf-8"):
         '''
         Depending on the state of this library it may not come pre-trained.
@@ -85,6 +85,8 @@ class topic_modelling:
         with open(dataset, encoding=dataset_encoding) as file:
             for line in file:
                 tokens = self._prepare_text_for_lda(line)
+
+
                 text_data.append(tokens)
 
         dictionary = corpora.Dictionary(
@@ -140,10 +142,16 @@ class topic_modelling:
             raise Exception("Identifier not trained. Please train before using.")
 
         lda = gensim.models.ldamodel.LdaModel.load(os.path.join(self.models_dir, 'model.gensim'))
+        topics = lda.print_topics(num_words=number_of_words)
 
-        return lda.print_topics(num_words=number_of_words)
+        # Loop through set of topics and format them as dict
+        dict_of_topics = {}
+        for topic in topics:
+            dict_of_topics[topic[0]] = topic[1]
 
-    def lda_display(self):
+        return dict_of_topics
+
+    def get_lda_display(self):
         '''
         Displays the lda
         :return:
@@ -159,7 +167,7 @@ class topic_modelling:
         lda = gensim.models.ldamodel.LdaModel.load(os.path.join(self.models_dir, 'model.gensim'))
 
         lda_display = pyLDAvis.gensim.prepare(lda, corpus, dictionary, sort_topics=True)
-        pyLDAvis.display(lda_display)
+        return lda_display
 
     def get_bag_of_words(self, text):
         '''
