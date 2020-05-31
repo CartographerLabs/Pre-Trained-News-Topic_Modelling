@@ -70,7 +70,7 @@ class topic_modelling:
                   tokens]  # Performs stemming and Stemming and lemmatization on all words in list
         return tokens
 
-    def re_train(self, number_of_topics=4, number_of_passes=15, dataset=os.path.join(data_dir, 'dataset.txt.arch2'),
+    def re_train(self, number_of_topics=4, number_of_passes=15, dataset=os.path.join(data_dir, 'dataset.txt'),
                  dataset_encoding="utf-8"):
         '''
         Depending on the state of this library it may not come pre-trained.
